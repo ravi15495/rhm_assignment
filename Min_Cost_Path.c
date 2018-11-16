@@ -1,6 +1,7 @@
-#include<stdio.h> 
+#include<stdio.h>
 #include<limits.h> 
-
+#define R 3 
+#define C 3
 int min(int x, int y, int z); 
 
 /* Returns cost of minimum cost path from (0,0) to (m, n) in mat[R][C]*/
@@ -30,19 +31,18 @@ int main()
 { 
 	int n;
 	int a;
-	printf("Size of graph=");
-	scanf("%d",&n);
+	n=R;
 	int cost[n+1][n+1];
-	printf("\nEnter the graph of %d * %d=",n,n);
+	printf("\nEnter the matrix=");
 	for(int i=0; i<n; i++){
 		for(int j=0;j<n;j++){
 			scanf("%d", &a);
 			cost[i][j]=a;
 		}
 	}
-	
+
 	int c,d;
-	printf("\nEnter the values for which minimum path shoulde be fine=");
+	printf("\nEnter the path=");
 	scanf("%d%d",&c,&d);
 	printf("Minimum path is= %d ", minCost(cost, c, d)); 
 	return 0; 
